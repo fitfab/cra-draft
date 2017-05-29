@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// NOTE: Enzyme uses shallow from 'react-test-renderer'
+// need to install it: npm install --save-dev react-test-renderer
+import {shallow} from 'enzyme';
+
 import App from './App';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+
+  shallow(<App />);
+
 });

@@ -5,7 +5,8 @@ we are testing this packages below:
 - react-bootstrap
 
 TODO
-[ ] pact.io to contract for the API
-[ ] Express to handle API/Proxing/assets/
-[ ] add react router
-[ ] add redux
+
+- [ ] pact.io to contract for the API
+- [ ] Express to handle API/Proxing/assets/
+- [ ] add react router
+- [ ] add redux
