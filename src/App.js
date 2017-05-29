@@ -27,7 +27,9 @@ class App extends Component {
                 })
             })
         }),
-        log: func
+        log: func,
+        onError: func
+
     }
 
     static defaultProps = {
@@ -40,29 +42,30 @@ class App extends Component {
                 done: {type: "boolean", title: "Done?", default: false}
             }
         },
-        log: (type) => console.log.bind(console, type)
+        log: (type) => console.log.bind(console, type),
+        onError: (errors) => console.log("I have", errors.length, "errors to fix")
     }
 
     render() {
         const {
             schema,
-            log
+            log,
+            onError
         } = this.props;
         return (
           <div className="App">
             <div className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
-              <h2>Welcome to React</h2>
             </div>
             <p className="App-intro">
               To get started, edit <code>src/App.js</code> and save to reload.
             </p>
-<Form
-    className="new-form"
-    schema={schema}
-    onChange={log("changed")}
-    onSubmit={log("submitted")}
-    onError={log("errors")} />
+            <Form
+                className="new-form"
+                schema={schema}
+                onChange={log("changed")}
+                onSubmit={log("submitted")}
+                onError={onError} />
 
           </div>
         );
