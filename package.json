@@ -9,14 +9,15 @@
     "react-jsonschema-form": "^0.48.2"
   },
   "devDependencies": {
-    "enzyme": "2.8.2",
-    "react-scripts": "1.0.6",
-    "react-test-renderer": "^15.5.4"
+    "enzyme": "^2.8.2",
+    "react-addons-test-utils": "^15.5.1",
+    "react-scripts": "1.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=node",
+    "test": "react-scripts test --env=jsdom",
+    "pact:test": "",
     "eject": "react-scripts eject"
   }
 }
