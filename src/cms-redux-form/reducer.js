@@ -16,23 +16,25 @@ export default ( state=initialState, action ) => {
     switch(action.type) {
 
         case REQUEST_BEGIN:
-            newState = { isFetching: true };
+            newState = { isFetching: true, fetchComplete: false, };
             state = Object.assign({}, state, newState)
             break;
 
         case REQUEST_SUCCESS:
             //console.log('REQUEST_SUCCESS',action.payload.data)
             newState = {
+                fetchComplete: true,
                 isFetching: false,
                 list: action.payload.data
             };
+            console.log('REQUEST_SUCCESS', newState)
             state = Object.assign({}, state, newState)
             break;
 
         case REQUEST_FAILED:
-            console.log('Miguel REQUEST_FAILED',action.payload)
             newState = {
                 isFetching: false,
+                fetchComplete: false,
                 errors: action.payload
             };
             state = Object.assign({}, state, newState)

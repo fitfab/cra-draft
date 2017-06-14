@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Form from "react-jsonschema-form";
+import './item.css'
 
 export default class Item extends Component {
 
@@ -12,8 +12,8 @@ export default class Item extends Component {
             button
         } = this.props.headers;
         return (
-            <fieldset>
-                <h3>{label}</h3>
+            <fieldset className="item">
+                <h3>{type}</h3>
                 <label>{label}</label>
                 <input type="text" defaultValue={content} onChange={this.props.onChange} />
                 <input type="submit" value={button} />
